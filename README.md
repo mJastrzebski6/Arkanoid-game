@@ -1,4 +1,4 @@
-# Arkanoid - game
+# :space_invader: Arkanoid - game
 
 Arkanoid game made in pure javascript within a school project.
 
