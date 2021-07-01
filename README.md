@@ -1,4 +1,4 @@
-# :space_invader: Arkanoid - game
+# Arkanoid :space_invader: 
 
 Arkanoid game made in pure javascript within a school project.
 
