@@ -36,7 +36,7 @@ class Board {
     }
     this.addListeners();
   }
-  addListeners(){
+  addListeners() {
     let startButton = document.getElementById("startGameButton");
     startButton.addEventListener("click", () => {
       this.startGame();
@@ -49,11 +49,11 @@ class Board {
 
     let secondDefaultBoard = document.getElementById("loadDefaultBoard2");
     secondDefaultBoard.addEventListener("click", () => {
-      this.loadMap("ball");
+      this.loadMap("maze");
     });
   }
-  async loadMap(name){
-    const response = await fetch(`./defaultMaps/${name}.txt`)
+  async loadMap(name) {
+    const response = await fetch(`./defaultMaps/${name}.txt`);
     const map = await response.json();
     this.boardArray = map;
   }
@@ -79,9 +79,9 @@ class Board {
         }
       }
     }
-    
+
     this.ctx.globalAlpha = 1;
-    
+
     for (let i = 0; i < 30; i++) {
       for (let j = 0; j < 14; j++) {
         if (this.boardArray[i][j][0] != -1) {
@@ -105,8 +105,8 @@ class Board {
       0,
       27,
       6,
-      Objects.vaus.positionX - Objects.vaus.width/2,
-      Objects.vaus.positionY - Objects.vaus.height/2,
+      Objects.vaus.positionX - Objects.vaus.width / 2,
+      Objects.vaus.positionY - Objects.vaus.height / 2,
       270,
       60
     );
@@ -131,7 +131,8 @@ class Board {
     document.getElementById("loadDefaultBoard2").style.visibility = "hidden";
     Objects.vaus.positionX = 560;
     Objects.ball.positionX = Objects.vaus.positionX;
-    Objects.ball.positionY = Objects.vaus.positionY - Objects.vaus.height/2 - Objects.ball.radius;
+    Objects.ball.positionY =
+      Objects.vaus.positionY - Objects.vaus.height / 2 - Objects.ball.radius;
     this.gameStatus = true;
     Objects.ball.speedY *= -1;
   }
